@@ -9,12 +9,37 @@ dname=$(dirname $apath)
 #echo "directory name : $dname"
 cd $dname
 
+## process command line args
+while [[ $# > 1 ]]
+do
+key="$1"
+
+case $key in
+    -s|--service)
+    ntCONF_test_service="$2"
+    shift # past argument
+    ;;
+    -h|--host)
+    ntCONF_test_host="$2"
+    shift # past argument
+    ;;
+    -o|--output)
+    ntCONF_test_output="$2"
+    shift # past argument
+    ;;
+    *)
+            # unknown option
+    ;;
+esac
+shift # past argument or value
+done
+
 ## load external libs
 source ntlibs.sh
 
 ## load values from test configuration
 #TODO check if $1 exists
-eval $(parse_yaml conf/$1 'ntCONF_')
+#eval $(parse_yaml conf/$1 'ntCONF_')
 #TODO error checking
 
 
@@ -40,8 +65,9 @@ ntCONF_service_cmd=$(sed -e "s/@service_port/${!serv_port}/g" <<< "$ntCONF_servi
 #set | grep "^ntCONF_"
 
 ## run service test and log output
-echo "Testing: .."
-echo "  output: $dname/$ntCONF_test_output"
-echo "  command: $ntCONF_service_cmd"
-$ntCONF_service_cmd > $ntCONF_test_output
-
+echo "vvvvvvvvvv" | tee -a $ntCONF_test_output
+echo "Testing: .." | tee -a $ntCONF_test_output
+echo "  output: $dname/$ntCONF_test_output" | tee -a $ntCONF_test_output
+echo "  command: $ntCONF_service_cmd" | tee -a $ntCONF_test_output
+$ntCONF_service_cmd >> $ntCONF_test_output
+echo "^^^^^^^^^^" | tee -a $ntCONF_test_output
