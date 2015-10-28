@@ -1,0 +1,8 @@
+host:
+  name: tango
+  ip: 10.10.1.10
+  vlan: 4010
+  lladdr: 00:60:dd:44:56:70
+  service:
+    iperf3:
+      port: 5110

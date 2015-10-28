@@ -1,0 +1,8 @@
+host:
+  name: mambo
+  ip: 10.10.1.30
+  vlan: 4010
+  lladdr: 00:0f:53:28:dc:00
+  service:
+    iperf3:
+      port: 5130

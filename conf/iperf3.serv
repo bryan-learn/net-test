@@ -1,0 +1,4 @@
+service:
+  name: iperf3
+  cmd: "iperf3 -c @host_ip -p @service_port -t 30"
+  

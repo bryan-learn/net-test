@@ -1,0 +1,4 @@
+service:
+  name: ping
+  cmd: "ping -c 5 @host_ip"
+  

@@ -1,0 +1,8 @@
+host:
+  name: rumba
+  ip: 10.10.1.20
+  vlan: 4010
+  lladdr: 00:0f:53:28:dd:4c
+  service:
+    iperf3:
+      port: 5120
