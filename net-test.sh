@@ -66,7 +66,7 @@ ntCONF_service_cmd=$(sed -e "s/@service_port/${!serv_port}/g" <<< "$ntCONF_servi
 
 ## run service test and log output
 echo "vvvvvvvvvv" | tee -a $ntCONF_test_output
-echo date "+%Y-%m-%d %T" | tee -a $ntCONF_test_output
+date "+%Y-%m-%d %T" | tee -a $ntCONF_test_output
 echo "Testing: .. $ntCONF_service_name to host $ntCONF_host_name" | tee -a $ntCONF_test_output
 echo "  output: $dname/$ntCONF_test_output" | tee -a $ntCONF_test_output
 echo "  command: $ntCONF_service_cmd" | tee -a $ntCONF_test_output
