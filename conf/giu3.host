@@ -1,0 +1,8 @@
+host:
+  name: giu3
+  ip: 10.10.2.30
+  vlan: 4010
+  lladdr: 00:02:c9:45:20:90
+  service:
+    iperf3:
+      port: 5230

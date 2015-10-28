@@ -1,0 +1,8 @@
+host:
+  name: psarch
+  ip: 10.10.2.10
+  vlan: 4010
+  lladdr: 00:60:dd:45:2d:16
+  service:
+    iperf3:
+      port: 5210

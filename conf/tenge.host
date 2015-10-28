@@ -1,0 +1,8 @@
+host:
+  name: tenge
+  ip: 10.10.2.50
+  vlan: 4010
+  lladdr: 00:60:dd:45:91:bb
+  service:
+    iperf3:
+      port: 5250
